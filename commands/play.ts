@@ -43,7 +43,7 @@ export default {
         .reply({ content: i18n.__mf("play.usageReply", { prefix: bot.prefix }), ephemeral: true })
         .catch(console.error);
 
-    const url = argSongName;
+    const url = argSongName.replace('https://youtu.be/', 'https://www.youtube.com/watch?v=');
 
     if (interaction.replied) await interaction.editReply("⏳ Loading...").catch(console.error);
     else await interaction.reply("⏳ Loading...");
